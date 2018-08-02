@@ -8,10 +8,10 @@ export default function(theme={}) {
   return StyleSheet.create({
     header: {
       flexDirection: 'row',
-      justifyContent: 'space-between',
-      paddingLeft: 10,
+      justifyContent:appStyle.headerLeft == 0 ? null : 'space-between',
+      paddingLeft: appStyle.headerLeft  ? appStyle.headerLeft  :10,
       paddingRight: 10,
-      alignItems: 'center'
+      alignItems:appStyle.headerLeft == 0 ? 'flex-start' :'center'
     },
     monthText: {
       fontSize: appStyle.textMonthFontSize,
@@ -42,7 +42,7 @@ export default function(theme={}) {
       marginTop: 2,
       marginBottom: 7,
       width: 32,
-      textAlign: 'center',
+      textAlign:appStyle.headerLeft == 0 ? 'left' : 'center',
       fontSize: appStyle.textDayHeaderFontSize,
       fontFamily: appStyle.textDayHeaderFontFamily,
       color: appStyle.textSectionTitleColor
