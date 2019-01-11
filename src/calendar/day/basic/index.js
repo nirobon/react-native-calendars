@@ -37,6 +37,7 @@ class Day extends Component {
 	}
 
 	render() {
+		console.log(this.props);
 		const containerStyle = [this.style.base];
 		const textStyle = [this.style.text];
 		const dotStyle = [this.style.dot];
@@ -68,6 +69,7 @@ class Day extends Component {
 			} else {
 				textStyle.push(this.style.selectedText);
 			}
+		} else if (this.props.theme.propsTys) {
 		} else if (isDisabled) {
 			textStyle.push(this.style.disabledText);
 		} else if (this.props.state === 'today') {
