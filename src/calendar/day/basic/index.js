@@ -70,6 +70,9 @@ class Day extends Component {
 				textStyle.push(this.style.selectedText);
 			}
 		} else if (this.props.theme.propsTys) {
+			if (new Date(this.props.date.dateString) < new Date().setHours(0, 0, 0, 0)) {
+				textStyle.push(this.style.disabledText);
+			}
 		} else if (isDisabled) {
 			textStyle.push(this.style.disabledText);
 		} else if (this.props.state === 'today') {
